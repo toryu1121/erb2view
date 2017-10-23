@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'erb2view/index'
+
+  get 'erb2view/top'
+
+  post 'erb2view/input'
+
+  post 'erb2view/view'
+  root to:"erb2view#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
