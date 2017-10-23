@@ -1,4 +1,6 @@
 fieldset
   div[style="display:inline-block"]
-    h1 Erb2view#view</h1>
-    p Find me in app/views/erb2view/view.html.erb
+    h1 Erb2view#view
+    - @test10d_list.each do |i|
+      p 
+        = i.text
