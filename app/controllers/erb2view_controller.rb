@@ -13,12 +13,15 @@ class Erb2viewController < ApplicationController
     @ok = Erb2view.new do |i|
       tom = params.permit(:text)["text"]
       p tom
+      p "#####slim#######"
+      #p Slim::ERBConverter(tom)
+      p "#####slim#######"
       i.text = tom
       i.save
     end
     
     p "############"
-    @ok = respond_to do |format|
+    respond_to do |format|
       if @ok.save
         p"########save##############"
         format.js
