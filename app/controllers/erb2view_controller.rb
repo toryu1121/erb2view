@@ -17,7 +17,6 @@ class Erb2viewController < ApplicationController
       tom = params.permit(:text)["text"]
       p tom
       p "#####slim#######"
-      #p Slim::ERBConverter(tom)
       
       tomm = Slim::Erbcon.new(tom)
       
@@ -25,7 +24,8 @@ class Erb2viewController < ApplicationController
       p tomm.view
       
       p "#####slim#######"
-      i.text = tom
+      i.text = tomm.view
+      #i.text = tomm.html
       i.save
     end
     
