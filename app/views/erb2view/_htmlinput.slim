@@ -1,0 +1,17 @@
+fieldset
+  div[style="display:inline-block"]
+    #title
+      h1 Erb2view#htmlinput
+
+
+    / input#textfield type="text"
+    
+    textarea#htmlarea rows="10"
+    input#htmlbtn type="button" value="投稿"
+    
+
+coffee:
+  $("#htmlbtn").click =>
+    @edihtml = document.getElementById("htmlarea").value
+    #alert @edihtml
+    $.post "erb2view/htmlinput", text: @edihtml   

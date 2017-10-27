@@ -1,7 +1,16 @@
 h1 Erb2view#index</h1>
 p Find me in app/views/erb2view/index.html.erb
 
+= form_tag( { action: :changeview }, { remote: true } ) do
+  = submit_tag :view
+
+= form_tag( { action: :changehtmlview }, { remote: true } ) do
+  = submit_tag :HTMLview
+
+
 div[style="display:inline-flex"]
-  = render partial: "input"
+  #divinputjserb
+    = render partial: "input"
+    
   #divjserb
     = render partial: "view"

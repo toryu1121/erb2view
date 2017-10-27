@@ -8,3 +8,9 @@ fieldset
     
     textarea#area rows="10"
     input#btn type="button" value="投稿"
+    
+coffee:
+  $("#btn").click =>
+    @edihtml = document.getElementById("area").value
+    #alert @edihtml
+    $.post "erb2view/input", text: @edihtml

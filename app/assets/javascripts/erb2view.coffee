@@ -29,7 +29,14 @@ class CoffeeStory extends CoffeeChap
         $("#btn").click =>
             @edihtml = document.getElementById("area").value
             #alert @edihtml
-            $.post "erb2view/input", text: @edihtml    
+            $.post "erb2view/input", text: @edihtml
+    
+    story11: ->
+        $("#htmlbtn").click =>
+            alert "momoken"
+            @edihtml = document.getElementById("htmlarea").value
+            #alert @edihtml
+            $.post "erb2view/htmlinput", text: @edihtml   
 
 class CoffeeAct extends CoffeeStory
     constructor: ->
@@ -37,5 +44,6 @@ class CoffeeAct extends CoffeeStory
         #this.story8()
         #this.story9()
         this.story10()
+        this.story11()
 $ ->
     new CoffeeAct

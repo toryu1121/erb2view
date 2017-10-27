@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get 'erb2view/top'
 
   post 'erb2view/input'
+  post 'erb2view/htmlinput'
+  post 'erb2view/changeview'
+  post 'erb2view/changehtmlview'
+  
 
   post 'erb2view/view'
   root to:"erb2view#index"

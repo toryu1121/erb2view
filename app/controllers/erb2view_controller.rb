@@ -10,7 +10,7 @@ class Erb2viewController < ApplicationController
   end
 
   def input
-    @test10d_list = Erb2view.order("created_at DESC").limit(5)
+     @test10d_list = Erb2view.order("created_at DESC").limit(5)
     
     p "#####okkkk#######"
     @ok = Erb2view.new do |i|
@@ -36,11 +36,51 @@ class Erb2viewController < ApplicationController
         format.js
       end
     end
+  end
+  
+  def htmlinput
+     @test10d_list = Erb2view.order("created_at DESC").limit(5)
     
+    p "#####okkkk#######"
+    @ok = Erb2view.new do |i|
+      tom = params.permit(:text)["text"]
+      p tom
+      p "#####slim#######"
+      
+      tomm = Slim::Erbcon.new(tom)
+      
+      p tomm.html
+      p tomm.view
+      
+      p "#####slim#######"
+      i.text = tomm.view
+      #i.text = tomm.html
+      i.save
+    end
     
-    
+    p "############"
+    respond_to do |format|
+      if @ok.save
+        p"########save##############"
+        format.js
+      end
+    end
   end
 
-  def view
+
+  def changeview
+    @test10d_list = Erb2view.order("created_at DESC").limit(5)
+    p "view##############"
+    respond_to do |format|
+      format.js
+    end
+  end
+  
+  def changehtmlview
+    @test10d_list = Erb2view.order("created_at DESC").limit(5)
+    p "htmlview##############"
+    respond_to do |format|
+      format.js
+    end
   end
 end
