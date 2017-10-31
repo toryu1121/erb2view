@@ -11,7 +11,10 @@ fieldset
     
 
 coffee:
+  if @edihtml == undefined
+    @edihtml = ""
+  document.getElementById("htmlarea").value = @edihtml
   $("#htmlbtn").click =>
     @edihtml = document.getElementById("htmlarea").value
     #alert @edihtml
-    $.post "erb2view/htmlinput", text: @edihtml   
+    $.post "erb2view/htmlinput", text: @edihtml

@@ -10,6 +10,9 @@ fieldset
     input#btn type="button" value="投稿"
     
 coffee:
+  if @edihtml == undefined
+    @edihtml = ""
+  document.getElementById("area").value = @edihtml
   $("#btn").click =>
     @edihtml = document.getElementById("area").value
     #alert @edihtml
