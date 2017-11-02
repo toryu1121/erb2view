@@ -1,0 +1,22 @@
+br
+h2 copycode
+
+fieldset
+  #itoo
+    p ```
+    pre
+      = simple_format(@copy)
+    p ```
+
+  button#copybtn2 copy
+
+coffee:
+
+  $("#copybtn2").click =>
+    range = document.createRange()
+    element = document.getElementById('itoo')
+    range.selectNodeContents element
+    selection = window.getSelection()
+    selection.removeAllRanges()
+    selection.addRange range
+    document.execCommand('copy')
