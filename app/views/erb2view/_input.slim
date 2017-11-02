@@ -1,12 +1,12 @@
 fieldset
   div[style="display:inline-block"]
     #title
-      h1 Erb2view#input
+      h1 slim2view#input
 
 
     / input#textfield type="text"
     
-    textarea#area rows="10"
+    textarea#area cols="60" rows="20" spellcheck="false"
     input#btn type="button" value="投稿"
     
 coffee:
@@ -17,3 +17,6 @@ coffee:
     @edihtml = document.getElementById("area").value
     #alert @edihtml
     $.post "erb2view/input", text: @edihtml
+
+css:
+ textarea#area {resize: none;}
