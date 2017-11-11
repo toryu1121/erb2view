@@ -11,10 +11,6 @@ class Erb2viewController < ApplicationController
   end
 
   def input
-    @test10d_list = Erb2view.order("created_at DESC").limit(5)
-    
-
-    
     tom = params.permit(:text)["text"]
     session[:user_id] = Slim::Erbcon.new(tom).view
     @tom = session[:user_id]
@@ -31,7 +27,6 @@ class Erb2viewController < ApplicationController
   end
   
   def htmlinput
-    @test10d_list = Erb2view.order("created_at DESC").limit(5)
     tom = params.permit(:text)["text"]
     session[:user_id] = Slim::Erbcon.new(tom).view
     @tom = session[:user_id]
